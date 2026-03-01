@@ -4,6 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Exercise1 Project.");
+
+        Console.Write("What is your first name? ");
+        string fName = Console.ReadLine();
+
+        Console.Write("What is your Last name? ");
+        string lName = Console.ReadLine();
+
+        Console.Write($"I am {lName}, {fName} {lName}");
+
     }
 }
