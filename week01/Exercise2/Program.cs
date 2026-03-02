@@ -41,6 +41,8 @@ class Program
 
         }
 
+        Console.WriteLine($"Your grade is {letter}");
+
         if (grade >= 70)
         {
             Console.WriteLine("You passed!");
