@@ -1,57 +1,55 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Numerics;
 using System.Collections.Generic;
+using System.Linq;
 
 class Program
 {
     static void Main(string[] args)
     {
-        //Create a list and sum 
+
         List<int> numbers = new List<int>();
-        Console.WriteLine("Enter a list of numbers, type 0 when finished. ");
-        Console.Write("Enter number: ");
-        string userN = Console.ReadLine();
-        int user = int.Parse(userN);
 
-        double total = 0;
-        double nItems = 0;
-        int largest = 0;
+        int number = -1;
+        int total = 0;
+        int times = -1;
+        int largestNumber = 0;
+        int smallestNumber = 99999999;
 
-        while (user != 0)
+        Console.WriteLine("Enter a list of numbers, type 0 when finished.");
+
+        while (number != 0)
         {
-            numbers.Add(user);
+            times += 1;
             Console.Write("Enter number: ");
-            userN = Console.ReadLine();
-            user = int.Parse(userN);
-
-            if (user > largest)
+            number = int.Parse(Console.ReadLine());
+            total += number;
+            numbers.Add(number);
+            if (number > largestNumber)
             {
-                largest = user;
+                largestNumber = number;
+            }
+            if (number < smallestNumber && number > 0)
+            {
+                smallestNumber = number;
             }
         }
 
-        //Calculate the average
-        foreach (int number in numbers)
-        {
-            total += number;
-        }
+        double average = (double)total / times;
 
-        for (int i = 0; i < numbers.Count; i++)
-        {
-            nItems++;
+        numbers.Remove(0);
+        numbers.Sort();
 
-        }
-
-        double average = total / nItems;
-
-
-        //Get the largest
-
-
-        //show
         Console.WriteLine($"The sum is: {total}");
         Console.WriteLine($"The average is: {average}");
-        Console.WriteLine($"The largest number is: {largest}");
-
-
+        Console.WriteLine($"The largest number is: {largestNumber}");
+        Console.WriteLine($"The smallest positive number is: {smallestNumber}");
+        Console.WriteLine("The sorted list is:");
+        foreach (var n in numbers)
+        {
+            Console.WriteLine(n);
+        }
     }
 }
