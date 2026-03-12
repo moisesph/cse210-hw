@@ -1,13 +1,15 @@
 using System;
 using System.IO;
 
+//The extra Function is that everytime you enter a Entry, if gives you a thanks to motivate you!, I have created
+//A new PromptGenerator called GetRandomMotivate I have used it in line 42 and 43
+
 class Program
 {
     public static void Main(string[] args)
     {
         string _selection = "99";
 
-        Entry newEntry = new Entry();
         Journal TodayJournal = new Journal();
 
         Console.WriteLine("Welcome to the Journal Program!");
@@ -20,11 +22,10 @@ class Program
 
             if (_selection == "1")
             {
+                Entry newEntry = new Entry();
 
 
                 PromptGenerator suggestion = new PromptGenerator();
-
-
 
                 newEntry._date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 newEntry._promptText = suggestion.GetRandomPrompt();
@@ -34,6 +35,9 @@ class Program
 
                 TodayJournal.AddEntry(newEntry);
 
+
+                string motivator = suggestion.GetRandomMotivate();
+                Console.WriteLine($"{motivator}\n");
             }
 
 
@@ -44,12 +48,17 @@ class Program
 
             else if (_selection == "3")
             {
+                Console.WriteLine("What is the file name?");
+                string fileName = Console.ReadLine();
+                TodayJournal.LoadFromFile(fileName);
 
             }
 
             else if (_selection == "4")
             {
-
+                Console.WriteLine("What is the file name?");
+                string fileName = Console.ReadLine();
+                TodayJournal.SaveToFile(fileName);
             }
 
         }
