@@ -35,7 +35,10 @@ public class Journal
 
     public void LoadFromFile(string file)
     {
+
+        Entry _entries = new Entry();
         string[] information = System.IO.File.ReadAllLines(file);
+
 
         foreach (string data in information)
         {
