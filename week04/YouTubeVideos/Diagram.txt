@@ -1,0 +1,23 @@
+-------------------------------------------
+|                   Video             |
+-------------------------------------------
+| - _tittle : string               
+| - _author : string
+| - _length : double
+| - __comments: List<Comment>                 
+-------------------------------------------
+| Video title: string , author: string , length: double , comments: List<Comment> 
+| + DisplayVideoInfo(): string        
+| + DisplayVideoComments(): string          
+-------------------------------------------
+
+
+-------------------------------------------
+|                   Comment             |
+-------------------------------------------
+| - _author : string               
+| - _text : string              
+-------------------------------------------
+| Comment: author: string , text: string 
+| + DisplayComment(): string             
+-------------------------------------------
