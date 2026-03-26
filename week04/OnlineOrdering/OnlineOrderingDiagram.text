@@ -4,12 +4,13 @@
 | - _products : List<Product>                
 | - _customer : Customer                 
 -------------------------------------------
+| Order List<Product> products, Customer customer
 | + Order(products, customer)            
 | + ComputeTotal(products : List): double   
 | + GetPackingLabel() : string             
 | + GetShippingLabel() : bool           
 -------------------------------------------
-
+ 
 
 
 -------------------------------------------
@@ -20,6 +21,7 @@
 | - _productId: int
 | - _Quantity: double  
 -------------------------------------------
+| Product: string name, double price, int productId, double quantity
 | + ComputeTotal(price: double, quantity: double )   : double              
 -------------------------------------------
 
@@ -31,6 +33,7 @@
 | - _Address: Address  
 | - _inUs: bool             
 -------------------------------------------
+| Customer: string name, Address address
 | + InUS(): bol               
 -------------------------------------------
 
@@ -43,6 +46,7 @@
 | - _state: string  
 | - _country: string             
 -------------------------------------------
+| Address: string street, string city, string state, string country, int zipCode
 | + InUS(): bol      
 | + DisplayAddress(): string           
 -------------------------------------------
