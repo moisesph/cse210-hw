@@ -16,8 +16,10 @@ public class ReflectingActivity : Activity
 
     public void Run()
     {
+        
         DisplayStartingMessage();
         string time = Console.ReadLine();
+        Console.Clear();
         setDuration(time);
         DateTime startT = DateTime.Now;
         int durationCount = _duration;
@@ -33,6 +35,7 @@ public class ReflectingActivity : Activity
             DisplayPrompt();
             Console.Write("When you have something in mind, press enter to continue");
             enter = Console.ReadLine();
+            Console.Clear();
             if (enter == "")
             {
                 Console.WriteLine("Now ponder on each of the following questions as they related to this experience.");
@@ -43,7 +46,7 @@ public class ReflectingActivity : Activity
                 ShowSpinner(_duration);
                 DisplayQuestions();
                 ShowSpinner(_duration);
-
+                Console.Clear();
                 DisplayEndingMessage();
             }
 

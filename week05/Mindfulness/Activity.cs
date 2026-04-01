@@ -21,7 +21,7 @@ public class Activity
 
     public void DisplayEndingMessage()
     {
-        Console.WriteLine($"\n\nWell done!!\nYou have completed another {_duration} seconds of the {_name}");
+        Console.WriteLine($"Well done!!\nYou have completed another {_duration} seconds of the {_name}");
     }
 
     public void ShowSpinner(int seconds)

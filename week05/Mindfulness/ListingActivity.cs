@@ -22,18 +22,19 @@ public class ListingActivity : Activity
         DateTime startT = DateTime.Now;
         int durationCount = _duration;
         DateTime endT = startT.AddSeconds(durationCount);
-
+        Console.Clear();
         while (DateTime.Now < endT)
         {
 
             //I need to clean the console later
             Console.Write("Get ready...");
-            ShowSpinner(5);
+            ShowCountDown(5);
+            Console.Clear();
             Console.Write("\nList as many responses you can to the following prompt");
             DisplayPrompt();
             Console.Write("You may begin in: ");
             ShowCountDown(5);
-
+            Console.Clear();
             List<string> answers = GetListFromUser();
             Console.WriteLine($"You listed {answers.Count()} Items!");
             ShowSpinner(5);

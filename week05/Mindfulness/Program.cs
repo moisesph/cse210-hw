@@ -11,9 +11,9 @@ class Program
 
         while (answer != "4")
         {
-            Console.WriteLine("Menu Options:\n  1. Start breathing activity\n  2. Start reflecting activity\n  3. Start listing activity\n  4. Quit\nSelect a choice from the menu");
+            Console.Write("Menu Options:\n  1. Start breathing activity\n  2. Start reflecting activity\n  3. Start listing activity\n  4. Quit\nSelect a choice from the menu ");
             answer = Console.ReadLine();
-
+            Console.Clear();
 
             if (answer == "1")
             {
