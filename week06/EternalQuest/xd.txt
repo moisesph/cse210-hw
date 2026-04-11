@@ -1,4 +1,0 @@
-SimpleGoal,fda,dfas,3,True
-ChecklistGoal,fdas,gad,8,4,4,4
-SimpleGoal,fdas,g,3,False
-EternalGoal,fdas,g,3

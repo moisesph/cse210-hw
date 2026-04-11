@@ -20,7 +20,7 @@ public class GoalManager
 
     public void setScore(int score)
     {
-        _score = _score;
+        _score = score;
     }
     public void Start()
     {
@@ -183,11 +183,33 @@ public class GoalManager
         goalAccomplished--;
         Goal selected = _goals[goalAccomplished];
         selected.RecordEvent();
+
+
         string scoreString = selected.getPoints();
         int scoreInt = int.Parse(scoreString);
-        if (selected.IsComplete())
+
+        string representation = selected.GetStringRepresentation();
+        string[] parts = representation.Split(",");
+        string goalType = parts[0];
+        string name = parts[1];
+        string description = parts[2];
+        string points = parts[3];
+
+        if (goalType == "ChecklistGoal")
         {
-            Console.WriteLine("Sorry, You have already reached this goal!, no points added");
+            string completed = parts[4]; //Here repeated because in Eternal Goad it doesn't have it
+            string target = parts[5];
+            string bonus = parts[6];
+            _score += scoreInt;
+
+            if (completed == target)
+            {
+                Console.WriteLine("You have completed this goal! no points added.");
+            }
+        }
+        else if (selected.IsComplete())
+        {
+            Console.WriteLine("You have completed this goal! no points added.");
         }
         //if (getIsComplete())
         else
