@@ -188,26 +188,7 @@ public class GoalManager
         string scoreString = selected.getPoints();
         int scoreInt = int.Parse(scoreString);
 
-        string representation = selected.GetStringRepresentation();
-        string[] parts = representation.Split(",");
-        string goalType = parts[0];
-        string name = parts[1];
-        string description = parts[2];
-        string points = parts[3];
-
-        if (goalType == "ChecklistGoal")
-        {
-            string completed = parts[4]; //Here repeated because in Eternal Goad it doesn't have it
-            string target = parts[5];
-            string bonus = parts[6];
-            _score += scoreInt;
-
-            if (completed == target)
-            {
-                Console.WriteLine("You have completed this goal! no points added.");
-            }
-        }
-        else if (selected.IsComplete())
+        if (selected.IsComplete())
         {
             Console.WriteLine("You have completed this goal! no points added.");
         }
